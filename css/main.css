@@ -30,11 +30,12 @@ body {
 	display: block;
 	padding-top: 75px;
 	float: right;
-	left: 1020px;
+	left: 800px;
 }
 
 .instructions > p {
 	color: red;
+	font-size: 40px;
 }
 
 .ryu-ready {
