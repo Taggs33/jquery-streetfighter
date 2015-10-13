@@ -14,7 +14,7 @@ $(document).keydown(function(key) {
 $(document).on('keyup',function(event){
 	if (event.which == 88){
 		$('.ryu-cool').hide();
-		$('.ryu-still').show();
+		$('.ryu-ready').show();
 	};
 });				
 
