@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
-$(document).keydown(function(key) {
+	var ryuStatus = 'still';
+
+	$(document).keydown(function(key) {
 		if(key.which == 88) {
 			
 			$('.ryu-still').hide();
@@ -11,14 +13,22 @@ $(document).keydown(function(key) {
 		
 	});
 
-$(document).on('keyup',function(event){
-	if (event.which == 88){
-		$('.ryu-cool').hide();
-		$('.ryu-ready').show();
-	};
-});				
+	$(document).on('keyup',function(event){
+		if (event.which == 88){
+			$('.ryu-cool').hide();
+
+			if (ryuStatus == 'ready') {
+				$('.ryu-ready').show();
+			} else if (ryuStatus == 'still') {
+				$('.ryu-still').show();
+			}
+			
+
+		};
+	});				
 
 	$('.ryu').mouseenter(function(){
+		ryuStatus = 'ready';
 		$('.ryu-still').hide();
 		$('.ryu-cool').hide();
 		$('.ryu-throwing').hide();
@@ -26,6 +36,7 @@ $(document).on('keyup',function(event){
 	})
 
 	.mouseleave(function(){
+		ryuStatus = 'still';
 		$('.ryu-ready').hide();
 		$('.ryu-cool').hide();
 		$('.ryu-throwing').hide();
